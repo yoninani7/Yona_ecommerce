@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Color.fromARGB(255, 255, 5, 5),
+          seedColor: Color.fromARGB(150, 255, 5, 5),
         ),
       ),
       home: const MyHomePage(title: 'Stadium'),
