@@ -15,8 +15,9 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text("data")),
+        appBar: AppBar(backgroundColor: Colors.red),
         body: Center(child: Text("data")),
       ),
     );
