@@ -4,22 +4,11 @@ void main() {
   runApp(const Welcome());
 }
 
-class Welcome extends StatefulWidget {
+class Welcome extends StatelessWidget {
   const Welcome({super.key});
 
   @override
-  State<Welcome> createState() => _WelcomeState();
-}
-
-class _WelcomeState extends State<Welcome> {
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.red),
-        body: Center(child: Text("data")),
-      ),
-    );
+    return const Placeholder();
   }
 }
