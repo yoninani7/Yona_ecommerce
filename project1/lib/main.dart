@@ -11,6 +11,7 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'New',
+      home: Scaffold(body: Center(child: Text('data'))),
     );
   }
 }
