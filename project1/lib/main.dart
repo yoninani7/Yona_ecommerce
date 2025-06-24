@@ -15,7 +15,7 @@ class Welcome extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text('Welcome to Flutter')),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(18.0),
           child: Container(
             color: const Color.fromARGB(255, 143, 54, 244),
             child: Center(child: Text('Welcome')),
