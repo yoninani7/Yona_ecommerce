@@ -10,16 +10,22 @@ class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'New',
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('Welcome to Flutter')),
-        body: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Container(
-            color: const Color.fromARGB(255, 143, 54, 244),
-            child: Center(child: Text('Welcome')),
-          ),
+        appBar: AppBar(
+          title: Text('Journey to destiny'),
+          backgroundColor: Color(0xFFE9B93A),
+        ),
+        body: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(38.0),
+              child: Container(
+                color: const Color.fromARGB(255, 155, 120, 194),
+                child: Center(child: Text('Welcome')),
+              ),
+            ),
+          ],
         ),
       ),
     );
