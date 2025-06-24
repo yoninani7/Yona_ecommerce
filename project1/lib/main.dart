@@ -11,7 +11,17 @@ class Welcome extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'New',
-      home: Scaffold(body: Center(child: Text('data'))),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: Text('Welcome to Flutter')),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            color: const Color.fromARGB(255, 143, 54, 244),
+            child: Center(child: Text('Welcome')),
+          ),
+        ),
+      ),
     );
   }
 }
