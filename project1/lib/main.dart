@@ -14,19 +14,26 @@ class Welcome extends StatelessWidget {
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/loginbg.png')),
+            image: DecorationImage(
+              image: AssetImage('assets/loginbg.png'),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 70.0,
+                  top: 100.0,
                   left: 50.0,
                   right: 50.0,
                 ),
                 child: Center(
-                  child: Image(image: AssetImage('assets/loginbg.png')),
+                  child: Image(image: AssetImage('assets/yona.png')),
                 ),
+              ),
+              Text(
+                'Login to your account',
+                style: TextStyle(color: Color(0x000035c7)),
               ),
             ],
           ),
