@@ -16,16 +16,17 @@ class Welcome extends StatelessWidget {
           title: Text('Journey to destiny'),
           backgroundColor: Color(0xFFE9B93A),
         ),
-        body: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(38.0),
-              child: Container(
-                color: const Color.fromARGB(255, 155, 120, 194),
-                child: Center(child: Text('Welcome')),
-              ),
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(4, (index) {
+              return Card(
+                color: Color(0xFFE9B93A),
+                child: Center(child: Text('data')),
+              );
+            }),
+          ),
         ),
       ),
     );
