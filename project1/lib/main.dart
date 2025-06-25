@@ -74,12 +74,18 @@ class _WelcomeState extends State<Welcome> {
                   decoration: InputDecoration(
                     labelText: 'Password',
                     labelStyle: TextStyle(color: Color(0xFF013968)),
-                    border: OutlineInputBorder(),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Color(0xFF013968)),
+                    ),
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsetsGeometry.only(left: 90.0, right:20.0 ),
+                padding: EdgeInsetsGeometry.only(
+                  left: 90.0,
+                  right: 90.0,
+                  top: 30.0,
+                ),
                 child: ElevatedButton(
                   onPressed: () {
                     setState(() {
