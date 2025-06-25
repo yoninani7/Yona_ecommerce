@@ -25,7 +25,7 @@ class Welcome extends StatelessWidget {
                   right: 50.0,
                 ),
                 child: Center(
-                  child: Image(image: AssetImage('assets/yonabw.png')),
+                  child: Image(image: AssetImage('assets/loginbg.png')),
                 ),
               ),
             ],
