@@ -4,9 +4,14 @@ void main() {
   runApp(const Welcome());
 }
 
-class Welcome extends StatelessWidget {
+class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
+  @override
+  State<Welcome> createState() => _WelcomeState();
+}
+
+class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,7 +24,7 @@ class Welcome extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
+          child: ListView(
             children: [
               Padding(
                 padding: const EdgeInsets.only(
@@ -31,9 +36,75 @@ class Welcome extends StatelessWidget {
                   child: Image(image: AssetImage('assets/yona.png')),
                 ),
               ),
-              Text(
-                'Login to your account',
-                style: TextStyle(color: Color(0x000035c7)),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 50.0),
+                  child: Text(
+                    'LOGIN TO YOUR ACCOUNT',
+                    style: TextStyle(
+                      color: Color(0xFF013968),
+                      fontSize: 23,
+                      fontWeight: FontWeight.bold,
+                    ), // Fixed color
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 40.0,
+                  left: 50.0,
+                  right: 50.0,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Username',
+                    labelStyle: TextStyle(color: Color(0xFF013968)),
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 20.0,
+                  left: 50.0,
+                  right: 50.0,
+                ),
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    labelStyle: TextStyle(color: Color(0xFF013968)),
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsGeometry.only(left: 90.0, right:20.0 ),
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      SnackBar snackBar = SnackBar(
+                        content: Text('Login button pressed!'),
+                        duration: Duration(seconds: 2),
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF013968), // Fixed color
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  ),
+                  child: Text(
+                    'LOGIN',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
