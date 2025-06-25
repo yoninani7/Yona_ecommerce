@@ -12,20 +12,23 @@ class Welcome extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Journey to destiny'),
-          backgroundColor: Color(0xFFE9B93A),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: GridView.count(
-            crossAxisCount: 2,
-            children: List.generate(4, (index) {
-              return Card(
-                color: Color(0xFFE9B93A),
-                child: Center(child: Text('data')),
-              );
-            }),
+        body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/loginbg.png')),
+          ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 70.0,
+                  left: 50.0,
+                  right: 50.0,
+                ),
+                child: Center(
+                  child: Image(image: AssetImage('assets/yonabw.png')),
+                ),
+              ),
+            ],
           ),
         ),
       ),
