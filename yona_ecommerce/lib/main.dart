@@ -75,7 +75,7 @@ class _WelcomeState extends State<Welcome> {
                 ),
               ),
               SizedBox(height: 30.0),
-              //  
+             
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
