@@ -90,10 +90,10 @@ class _WelcomeState extends State<Welcome> {
                           ),
                           filled: true,
                           fillColor: const Color.fromARGB(
-                            255,
-                            240,
-                            240,
-                            240,
+                            43,
+                            247,
+                            238,
+                            124,
                           ), // Lighter background
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(
