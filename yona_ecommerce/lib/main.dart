@@ -75,16 +75,7 @@ class _WelcomeState extends State<Welcome> {
                 ),
               ),
               SizedBox(height: 30.0),
-              Padding(
-                padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-                child: Column(
-                  children: [
-                    textFormField('Username'),
-                    SizedBox(height: 20.0),
-                    textFormField('Password'),
-                  ],
-                ),
-              ),
+              //  
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
