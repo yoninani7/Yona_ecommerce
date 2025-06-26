@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project1/widgets/buttons.dart';
+import 'package:project1/widgets/textFormField.dart';
 
 void main() {
   runApp(const Welcome());
@@ -32,7 +34,6 @@ class _WelcomeState extends State<Welcome> {
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
                     onPressed: () {
-                      print('Button pressed');
                       setState(() {
                         SnackBar snackBar = SnackBar(
                           content: Text('Settings button pressed!'),
@@ -107,7 +108,7 @@ class _WelcomeState extends State<Welcome> {
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 50.0, top: 10.0),
+                  padding: const EdgeInsets.only(right: 50.0),
                   child: TextButton(
                     onPressed: () {
                       setState(() {
@@ -127,58 +128,12 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 50.0, top: 10.0),
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        SnackBar snackBar = SnackBar(
-                          content: Text('Sign Up button pressed!'),
-                          duration: Duration(seconds: 2),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      });
-                    },
-                    child: Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        color: Color(0xFF013968), // Fixed color
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 50.0, top: 10.0),
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        SnackBar snackBar = SnackBar(
-                          content: Text('Login as Guest button pressed!'),
-                          duration: Duration(seconds: 2),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      });
-                    },
-                    child: Text(
-                      'Login as Guest',
-                      style: TextStyle(
-                        color: Color(0xFF013968), // Fixed color
-                      ),
-                    ),
-                  ),
-                ),
-              ),
 
               Padding(
                 padding: EdgeInsetsGeometry.only(
                   left: 90.0,
                   right: 90.0,
-                  top: 30.0,
+                  top: 10.0,
                 ),
                 child: ElevatedButton(
                   onPressed: () {
@@ -205,6 +160,78 @@ class _WelcomeState extends State<Welcome> {
                     ),
                   ),
                 ),
+              ),
+              textFormField('innertext'),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: Text(
+                    'Don\'t have an account?',
+                    style: TextStyle(
+                      color: Color(0xFF013968),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 50.0, top: 10.0),
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            SnackBar snackBar = SnackBar(
+                              content: Text('Sign Up button pressed!'),
+                              duration: Duration(seconds: 2),
+                            );
+                            ScaffoldMessenger.of(
+                              context,
+                            ).showSnackBar(snackBar);
+                          });
+                        },
+                        child: Text(
+                          'Sign Up',
+                          style: TextStyle(
+                            color: Color(0xFF013968),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 50.0, top: 10.0),
+                      child: TextButton(
+                        onPressed: () {
+                          setState(() {
+                            SnackBar snackBar = SnackBar(
+                              content: Text('Login as Guest button pressed!'),
+                              duration: Duration(seconds: 2),
+                            );
+                            ScaffoldMessenger.of(
+                              context,
+                            ).showSnackBar(snackBar);
+                          });
+                        },
+                        child: Text(
+                          'Login as Guest',
+                          style: TextStyle(
+                            color: Color(0xFF013968),
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // textFormField("innertext"),
+                ],
               ),
             ],
           ),
