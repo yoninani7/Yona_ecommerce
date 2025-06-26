@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project1/widgets/textFormField.dart';
 
 void main() {
   runApp(const Welcome());
@@ -135,12 +134,7 @@ class _WelcomeState extends State<Welcome> {
                             fontWeight: FontWeight.w400,
                           ),
                           filled: true,
-                          fillColor: const Color.fromARGB(
-                            255,
-                            240,
-                            240,
-                            240,
-                          ), // Lighter background
+                          fillColor: const Color.fromARGB(43, 247, 238, 124),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(
                               12.0,
