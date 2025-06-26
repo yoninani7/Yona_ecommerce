@@ -26,9 +26,33 @@ class _WelcomeState extends State<Welcome> {
           ),
           child: ListView(
             children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                    onPressed: () {
+                      print('Button pressed');
+                      setState(() {
+                        SnackBar snackBar = SnackBar(
+                          content: Text('Settings button pressed!'),
+                          duration: Duration(seconds: 2),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      });
+                    },
+                    icon: Icon(
+                      Icons.language,
+                      color: Color(0xFF013968),
+                      size: 30,
+                    ),
+                  ),
+                ),
+              ),
+
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 100.0,
+                  top: 70.0,
                   left: 50.0,
                   right: 50.0,
                 ),
@@ -40,7 +64,7 @@ class _WelcomeState extends State<Welcome> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50.0),
                   child: Text(
-                    'LOGIN TO YOUR ACCOUNT',
+                    'LOGIN TO YOUR ACCOUNT ! ',
                     style: TextStyle(
                       color: Color(0xFF013968),
                       fontSize: 23,
@@ -80,6 +104,76 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 50.0, top: 10.0),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        SnackBar snackBar = SnackBar(
+                          content: Text('Forgot Password button pressed!'),
+                          duration: Duration(seconds: 2),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      });
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(
+                        color: Color(0xFF013968), // Fixed color
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 50.0, top: 10.0),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        SnackBar snackBar = SnackBar(
+                          content: Text('Sign Up button pressed!'),
+                          duration: Duration(seconds: 2),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      });
+                    },
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                        color: Color(0xFF013968), // Fixed color
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 50.0, top: 10.0),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        SnackBar snackBar = SnackBar(
+                          content: Text('Login as Guest button pressed!'),
+                          duration: Duration(seconds: 2),
+                        );
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      });
+                    },
+                    child: Text(
+                      'Login as Guest',
+                      style: TextStyle(
+                        color: Color(0xFF013968), // Fixed color
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
               Padding(
                 padding: EdgeInsetsGeometry.only(
                   left: 90.0,
