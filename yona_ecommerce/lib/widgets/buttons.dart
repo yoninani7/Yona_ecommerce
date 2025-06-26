@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-Widget button(TextEditingController controller,String innertext) {
-  return TextFormField(
-    controller: controller,
+Widget button(String innertext) {
+  return TextFormField( 
     readOnly: false,
     onTap: () {},
     decoration:  InputDecoration(

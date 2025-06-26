@@ -53,7 +53,7 @@ class _WelcomeState extends State<Welcome> {
 
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 70.0,
+                  top: 50.0,
                   left: 50.0,
                   right: 50.0,
                 ),
@@ -74,35 +74,15 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
+              SizedBox(height: 30.0),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 40.0,
-                  left: 50.0,
-                  right: 50.0,
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Username',
-                    labelStyle: TextStyle(color: Color(0xFF013968)),
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 20.0,
-                  left: 50.0,
-                  right: 50.0,
-                ),
-                child: TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: 'Password',
-                    labelStyle: TextStyle(color: Color(0xFF013968)),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xFF013968)),
-                    ),
-                  ),
+                padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+                child: Column(
+                  children: [
+                    textFormField('Username'),
+                    SizedBox(height: 20.0),
+                    textFormField('Password'),
+                  ],
                 ),
               ),
               Align(
@@ -161,7 +141,6 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
-              textFormField('innertext'),
               Center(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 30.0),
