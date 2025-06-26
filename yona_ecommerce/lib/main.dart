@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project1/widgets/buttons.dart';
 import 'package:project1/widgets/textFormField.dart';
 
 void main() {
@@ -70,12 +69,94 @@ class _WelcomeState extends State<Welcome> {
                       color: Color(0xFF013968),
                       fontSize: 23,
                       fontWeight: FontWeight.bold,
-                    ), // Fixed color
+                    ),
                   ),
                 ),
               ),
-              SizedBox(height: 30.0),
-             
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+                child: Column(
+                  children: [
+                    SizedBox(height: 50.0),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        readOnly: false,
+                        onTap: () {},
+                        decoration: InputDecoration(
+                          hintText: 'Username',
+                          hintStyle: const TextStyle(color: Colors.grey),
+                          filled: true,
+                          fillColor: const Color.fromARGB(255, 255, 255, 255),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15.0,
+                            horizontal: 20.0,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.assignment_ind_outlined,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        onTap: () {},
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          hintText: 'Password',
+                          hintStyle: const TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          filled: true,
+                          fillColor: const Color.fromARGB(
+                            255,
+                            240,
+                            240,
+                            240,
+                          ), // Lighter background
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(
+                              12.0,
+                            ), // More rounded corners
+                            borderSide: BorderSide(
+                              color: Colors.grey.shade300,
+                              width: 1.5,
+                            ), // Subtle border
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 2.0,
+                            ), // Color change on focus
+                          ),
+                          contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15.0,
+                            horizontal: 20.0,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.key_outlined,
+                            color: Colors.blue, // Vibrant icon color
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
