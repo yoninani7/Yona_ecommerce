@@ -82,7 +82,6 @@ class _WelcomeState extends State<Welcome> {
                       padding: const EdgeInsets.all(8.0),
                       child: TextFormField(
                         onTap: () {},
-                        obscureText: true,
                         decoration: InputDecoration(
                           hintText: 'Username',
                           hintStyle: const TextStyle(
@@ -117,15 +116,8 @@ class _WelcomeState extends State<Welcome> {
                             horizontal: 20.0,
                           ),
                           prefixIcon: Icon(
-                            Icons.key_outlined,
+                            Icons.person_outline,
                             color: Color(0xFF013968), // Vibrant icon color
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              Icons.visibility_off_outlined,
-                              color: Color(0xFF013968),
-                            ),
-                            onPressed: () {},
                           ),
                         ),
                       ),
@@ -190,21 +182,15 @@ class _WelcomeState extends State<Welcome> {
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 50.0),
+                  padding: const EdgeInsets.only(right: 40.0),
                   child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        SnackBar snackBar = SnackBar(
-                          content: Text('Forgot Password button pressed!'),
-                          duration: Duration(seconds: 2),
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      });
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(
-                        color: Color(0xFF013968), // Fixed color
+                        color: Color(0xFF013968),
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
                       ),
                     ),
                   ),
@@ -245,13 +231,13 @@ class _WelcomeState extends State<Welcome> {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 30.0),
+                  padding: const EdgeInsets.only(top: 20.0),
                   child: Text(
                     'Don\'t have an account?',
                     style: TextStyle(
                       color: Color(0xFF013968),
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 18,
                     ),
                   ),
                 ),
@@ -259,22 +245,13 @@ class _WelcomeState extends State<Welcome> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  SizedBox(width: 30),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 50.0, top: 10.0),
+                      padding: const EdgeInsets.only(left: 50.0, top: 40.0),
                       child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            SnackBar snackBar = SnackBar(
-                              content: Text('Sign Up button pressed!'),
-                              duration: Duration(seconds: 2),
-                            );
-                            ScaffoldMessenger.of(
-                              context,
-                            ).showSnackBar(snackBar);
-                          });
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
@@ -285,22 +262,13 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ),
                   ),
+
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 50.0, top: 10.0),
+                      padding: const EdgeInsets.only(right: 50.0, top: 40.0),
                       child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            SnackBar snackBar = SnackBar(
-                              content: Text('Login as Guest button pressed!'),
-                              duration: Duration(seconds: 2),
-                            );
-                            ScaffoldMessenger.of(
-                              context,
-                            ).showSnackBar(snackBar);
-                          });
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Login as Guest',
                           style: TextStyle(
