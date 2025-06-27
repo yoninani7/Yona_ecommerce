@@ -49,7 +49,6 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
-
               Padding(
                 padding: const EdgeInsets.only(
                   top: 50.0,
@@ -173,7 +172,6 @@ class _WelcomeState extends State<Welcome> {
                   ],
                 ),
               ),
-
               Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
@@ -191,30 +189,17 @@ class _WelcomeState extends State<Welcome> {
                   ),
                 ),
               ),
-
               Padding(
-                padding: EdgeInsetsGeometry.only(
-                  left: 90.0,
-                  right: 90.0,
-                  top: 10.0,
-                ),
+                padding: EdgeInsets.only(left: 90.0, right: 90.0, top: 10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      SnackBar snackBar = SnackBar(
-                        content: Text('Login button pressed!'),
-                        duration: Duration(seconds: 2),
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Register()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(
-                      199,
-                      1,
-                      58,
-                      104,
-                    ), // Fixed color
+                    backgroundColor: Color.fromARGB(199, 1, 58, 104),
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -253,14 +238,15 @@ class _WelcomeState extends State<Welcome> {
                       padding: const EdgeInsets.only(left: 50.0, top: 40.0),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return Register(); 
-                              },
-                            ),
-                          );
+                          setState(() {
+                            print('object');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Register(),
+                              ),
+                            );
+                          });
                         },
                         child: Text(
                           'Sign Up',
