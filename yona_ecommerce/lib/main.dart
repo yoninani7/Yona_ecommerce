@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project1/screens/register.dart';
 
 void main() {
   runApp(const Welcome());
@@ -182,7 +183,7 @@ class _WelcomeState extends State<Welcome> {
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(
-                        color: Color(0xFF013968),
+                        color: Color.fromARGB(176, 1, 58, 104),
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
@@ -208,7 +209,12 @@ class _WelcomeState extends State<Welcome> {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF013968), // Fixed color
+                    backgroundColor: Color.fromARGB(
+                      199,
+                      1,
+                      58,
+                      104,
+                    ), // Fixed color
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -219,6 +225,7 @@ class _WelcomeState extends State<Welcome> {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontSize: 16,
                     ),
                   ),
                 ),
@@ -245,7 +252,16 @@ class _WelcomeState extends State<Welcome> {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 50.0, top: 40.0),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Register(); 
+                              },
+                            ),
+                          );
+                        },
                         child: Text(
                           'Sign Up',
                           style: TextStyle(
