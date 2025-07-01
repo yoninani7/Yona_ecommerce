@@ -189,10 +189,7 @@ class _LoginState extends State<Login> {
                 padding: EdgeInsets.only(left: 90.0, right: 90.0, top: 10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Register()),
-                    );
+                     
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color.fromARGB(199, 1, 58, 104),
@@ -234,8 +231,7 @@ class _LoginState extends State<Login> {
                       padding: const EdgeInsets.only(left: 50.0, top: 40.0),
                       child: TextButton(
                         onPressed: () {
-                          setState(() {
-                            print('object');
+                          setState(() { 
                             Navigator.push(
                               context,
                               MaterialPageRoute(
