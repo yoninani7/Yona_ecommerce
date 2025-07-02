@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project1/screens/register.dart';
+import 'package:project1/widgets/textFormField.dart';
+import 'package:project1/widgets/textpass.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -75,95 +77,12 @@ class _LoginState extends State<Login> {
                     SizedBox(height: 50.0),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        onTap: () {},
-                        decoration: InputDecoration(
-                          hintText: 'Username',
-                          hintStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          filled: true,
-                          fillColor: const Color.fromARGB(
-                            43,
-                            247,
-                            238,
-                            124,
-                          ), // Lighter background
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(
-                              12.0,
-                            ), // More rounded corners
-                            borderSide: BorderSide(
-                              color: Colors.grey.shade300,
-                              width: 1.5,
-                            ), // Subtle border
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide: BorderSide(
-                              color: const Color.fromARGB(211, 224, 202, 7),
-                              width: 2.0,
-                            ), // Color change on focus
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            vertical: 15.0,
-                            horizontal: 20.0,
-                          ),
-                          prefixIcon: Icon(
-                            Icons.person_outline,
-                            color: Color(0xFF013968), // Vibrant icon color
-                          ),
-                        ),
-                      ),
+                      child: textFormField("Username", Icons.person_outline),
                     ),
 
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        onTap: () {},
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          hintStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w400,
-                          ),
-                          filled: true,
-                          fillColor: const Color.fromARGB(43, 247, 238, 124),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(
-                              12.0,
-                            ), // More rounded corners
-                            borderSide: BorderSide(
-                              color: Colors.grey.shade300,
-                              width: 1.5,
-                            ), // Subtle border
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12.0),
-                            borderSide: BorderSide(
-                              color: const Color.fromARGB(211, 224, 202, 7),
-                              width: 2.0,
-                            ), // Color change on focus
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            vertical: 15.0,
-                            horizontal: 20.0,
-                          ),
-                          prefixIcon: Icon(
-                            Icons.key_outlined,
-                            color: Color(0xFF013968), // Vibrant icon color
-                          ),
-                          suffixIcon: IconButton(
-                            icon: Icon(
-                              Icons.visibility_off_outlined,
-                              color: Color(0xFF013968),
-                            ),
-                            onPressed: () {},
-                          ),
-                        ),
-                      ),
+                      child: textpass('Password', Icons.key_outlined),
                     ),
                   ],
                 ),
@@ -201,7 +120,7 @@ class _LoginState extends State<Login> {
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 19,
                     ),
                   ),
                 ),
@@ -213,7 +132,7 @@ class _LoginState extends State<Login> {
                     'Don\'t have an account?',
                     style: TextStyle(
                       color: Color(0xFF013968),
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 18,
                     ),
                   ),
@@ -222,11 +141,11 @@ class _LoginState extends State<Login> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 30),
+                  SizedBox(width: 20),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 50.0, top: 40.0),
+                      padding: const EdgeInsets.only(left: 50.0, top: 20.0),
                       child: TextButton(
                         onPressed: () {
                           setState(() {
@@ -238,34 +157,48 @@ class _LoginState extends State<Login> {
                             );
                           });
                         },
-                        child: Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            color: Color(0xFF013968),
-                            fontWeight: FontWeight.bold,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              color: Color(0xFF013968),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 50.0, top: 40.0),
+                      padding: const EdgeInsets.only(right: 50.0, top: 20.0),
                       child: TextButton(
                         onPressed: () {},
-                        child: Text(
-                          'Login as Guest',
-                          style: TextStyle(
-                            color: Color(0xFF013968),
-                            fontWeight: FontWeight.bold,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Color(0xFF013968),
+                              width: 2,
+                            ),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Login as Guest',
+                              style: TextStyle(
+                                color: Color(0xFF013968),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  // textFormField("innertext"),
                 ],
               ),
             ],
