@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project1/screens/home.dart';
 import 'package:project1/screens/login.dart';
 import 'package:project1/widgets/textFormField.dart';
 import 'package:project1/widgets/textpass.dart';
@@ -98,6 +99,12 @@ class _RegisterState extends State<Register> {
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                    );
                 },
                 child: Text(
                   'REGISTER',
