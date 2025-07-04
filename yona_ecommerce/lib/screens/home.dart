@@ -9,11 +9,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<Users> _users = [];
   final List<Users> _list = List.generate(10, (index) {
     return Users(
-      name: 'adasf ${index + 1}',
-      email: 'Yonatan kassahun${index + 1}',
-      phoneNumber: '1234567890',
+      name: 'b${index + 1}',
+      email: 'a${index + 1}',
+      phoneNumber: '123${index + 1}890',
     );
   });
   @override
@@ -33,16 +34,30 @@ class _HomeState extends State<Home> {
           return Card(
             margin: const EdgeInsets.all(10.0),
             child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: Colors.blue,
-                child: Text(
-                  _list[index].name?.substring(0, 2) ?? '',
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
               title: Text(_list[index].name ?? ''),
               subtitle: Text(_list[index].email ?? ''),
-              trailing: Text(_list[index].phoneNumber ?? ''),
+              trailing: IconButton(
+                icon: Icon(
+                  (_list[index].isFavorite ?? false)
+                      ? Icons.favorite
+                      : Icons.favorite_border,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _list[index].isFavorite = !_list[index].isFavorite!;
+                    _list.sort((a, b) {
+                      final aFav = a.isFavorite ?? false;
+                      final bFav = b.isFavorite ?? false;
+                      if (aFav == bFav) return 0;
+                      return aFav ? -1 : 1;
+                    });
+                  });
+                },
+                color:
+                    (_list[index].isFavorite ?? false)
+                        ? Colors.red
+                        : Colors.grey,
+              ),
             ),
           );
         },
