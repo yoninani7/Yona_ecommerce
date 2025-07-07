@@ -5,7 +5,7 @@ import 'package:project1/screens/login.dart';
 import 'package:project1/widgets/textFormField.dart';
 import 'package:project1/widgets/textpass.dart';
 
-class Register extends StatefulWidget {
+class Register extends StatefulWidget   {
   const Register({super.key});
 
   @override
@@ -174,14 +174,14 @@ class _RegisterState extends State<Register> {
                           );
                           return;
                         }
-                        final newusers = Users(
-                          name: username,
-                          email: email,
-                          phoneNumber: password,
-                        );
-                        setState(() {
-                          newusers.adduser(newusers);
+                        
+                        setState(() { 
+                          Users newUser = Users(name: 'q', email: 'q', phoneNumber: 'q');  
+                          newUser.email = email;
+                          newUser.name = username;
+                          newUser.phoneNumber = password;
                         });
+
                         SnackBar snackBar = SnackBar(
                           content: Text('Registration Successful!'),
                           duration: Duration(seconds: 2),

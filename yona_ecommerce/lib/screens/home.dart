@@ -9,7 +9,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<Users> _users = [];
+  final List<Users> _users = [
+    Users(name: 'name', email: 'email', phoneNumber: 'phoneNumber'),
+  ];
   final List<Users> _list = List.generate(10, (index) {
     return Users(
       name: 'b${index + 1}',
@@ -29,23 +31,23 @@ class _HomeState extends State<Home> {
         backgroundColor: const Color(0xFFE9B93A),
       ),
       body: ListView.builder(
-        itemCount: _list.length,
+        itemCount: _users.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
             margin: const EdgeInsets.all(10.0),
             child: ListTile(
-              title: Text(_list[index].name ?? ''),
-              subtitle: Text(_list[index].email ?? ''),
+              title: Text(_users[index].name ?? ''),
+              subtitle: Text(_users[index].email ?? ''),
               trailing: IconButton(
                 icon: Icon(
-                  (_list[index].isFavorite ?? false)
+                  (_users[index].isFavorite ?? false)
                       ? Icons.favorite
                       : Icons.favorite_border,
                 ),
                 onPressed: () {
                   setState(() {
-                    _list[index].isFavorite = !_list[index].isFavorite!;
-                    _list.sort((a, b) {
+                    _users[index].isFavorite = !_users[index].isFavorite!;
+                    _users.sort((a, b) {
                       final aFav = a.isFavorite ?? false;
                       final bFav = b.isFavorite ?? false;
                       if (aFav == bFav) return 0;
@@ -54,7 +56,7 @@ class _HomeState extends State<Home> {
                   });
                 },
                 color:
-                    (_list[index].isFavorite ?? false)
+                    (_users[index].isFavorite ?? false)
                         ? Colors.red
                         : Colors.grey,
               ),

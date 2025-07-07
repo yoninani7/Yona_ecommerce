@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class Users extends ChangeNotifier {
+class Users {
   String? name;
   String? email;
   String? phoneNumber;
@@ -12,13 +12,6 @@ class Users extends ChangeNotifier {
     this.isFavorite = true,
   });
   
-  List<Users> get users => _users;
-  final List<Users> _users = [];
-
-  void adduser(Users user) {
-    _users.add(user);
-    notifyListeners();
-  } 
 
 }
 
