@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget textFormField(String innerText, IconData icon) {
+Widget textFormField(String innerText, IconData icon, {FormFieldSetter<String>? onsaved}) {
   return TextFormField(
     onTap: () {},
+    onSaved: onsaved,
     decoration: InputDecoration(
       hintText: innerText,
       hintStyle: const TextStyle(

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget textpass(String innerText, IconData icon) {
+Widget textpass(String innerText, IconData icon,{FormFieldSetter<String>? onsaved}) {
   return TextFormField(
     onTap: () {},
+    onSaved: onsaved,
     obscureText: true,
     decoration: InputDecoration(
       hintText: innerText,
