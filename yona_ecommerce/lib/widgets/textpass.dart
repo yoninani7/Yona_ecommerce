@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-Widget textpass(String innerText, IconData icon,{FormFieldSetter<String>? onsaved}) {
+Widget textpass(
+  String innerText,
+  IconData icon, {
+  FormFieldSetter<String>? onsaved,
+}) {
   return TextFormField(
     onTap: () {},
     onSaved: onsaved,
@@ -33,11 +37,13 @@ Widget textpass(String innerText, IconData icon,{FormFieldSetter<String>? onsave
       ),
       prefixIcon: Icon(
         Icons.key_outlined,
-        color: Color(0xFF013968), // Vibrant icon color
+        color: Color(0xFF013968),  
       ),
       suffixIcon: IconButton(
-        icon: Icon(Icons.visibility_off_outlined, color: Color(0xFF013968)),
-        onPressed: () {},
+        icon: Icon(Icons.visibility_outlined, color: Color(0xFF013968)),
+        onPressed: () {
+
+        },
       ),
     ),
   );
