@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:project1/models/users.dart';
+import 'package:flutter/material.dart'; 
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -21,6 +20,13 @@ class _HomeState extends State<Home> {
         backgroundColor: const Color(0xFFE9B93A),
       ),
       body: Center(child: Text('data')),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        onPressed: () {
+          SnackBar snackBar = SnackBar(content: Text('data'));
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        },
+      ),
     );
   }
 }

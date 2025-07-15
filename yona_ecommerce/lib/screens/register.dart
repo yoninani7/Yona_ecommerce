@@ -5,7 +5,7 @@ import 'package:project1/screens/login.dart';
 import 'package:project1/widgets/textFormField.dart';
 import 'package:project1/widgets/textpass.dart';
 
-class Register extends StatefulWidget   {
+class Register extends StatefulWidget {
   const Register({super.key});
 
   @override
@@ -55,7 +55,6 @@ class _RegisterState extends State<Register> {
             ),
             Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: ListView(
                 shrinkWrap: true,
                 children: [
@@ -140,6 +139,10 @@ class _RegisterState extends State<Register> {
                       ),
                       onPressed: () {
                         _formKey.currentState?.save();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Home()),
+                        );
 
                         if (username == null ||
                             email == null ||
@@ -174,9 +177,13 @@ class _RegisterState extends State<Register> {
                           );
                           return;
                         }
-                        
-                        setState(() { 
-                          Users newUser = Users(name: 'q', email: 'q', phoneNumber: 'q');  
+
+                        setState(() {
+                          Users newUser = Users(
+                            name: 'q',
+                            email: 'q',
+                            phoneNumber: 'q',
+                          );
                           newUser.email = email;
                           newUser.name = username;
                           newUser.phoneNumber = password;
@@ -187,10 +194,10 @@ class _RegisterState extends State<Register> {
                           duration: Duration(seconds: 2),
                         );
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Home()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => Home()),
+                        // );
                       },
                       child: Text(
                         'REGISTER',
